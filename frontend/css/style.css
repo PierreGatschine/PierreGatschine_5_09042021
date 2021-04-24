@@ -1,0 +1,58 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #262626;
+    color: #FAFAFA;
+    font-family: 'Hind Guntur',
+    sans-serif;
+}
+
+h1 {
+    padding: 2rem;
+    color: #FF5E3A;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+p {
+    font-size: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding-bottom: 3rem;
+}
+figcaption {
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+
+    
+}
+
+.figure-caption {
+    color: #8b8f92;
+}
+
+
+#productPrice {
+    
+    align-self: flex-end;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
