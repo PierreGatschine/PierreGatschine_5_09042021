@@ -24,10 +24,6 @@
     <h1>Orinoco</h1>
     <div class="container">
       <div class="row">
-        <ul id="productsList" class="list-group">
-          <div class="col-6-sm"></div>
-        </ul>
-
         <figure>
           <img
             id="productImage"
@@ -36,9 +32,27 @@
             alt="..."
           />
           <figcaption class="figure-caption">
-            <h3 id="productName"></h3>
+            <div>
+              <h3 id="productName"></h3>
+              <span id="productPrice"></span>
+            </div>
             <p id="productDescription"></p>
-            <span id="productPrice"></span>
+
+            <div id="productLenses">
+              <h4>Choisir une lentille</h4>
+              <select
+                id="productLens"
+                class="form-select col-sm-3 col-md-3 col-lg-3"
+                aria-label="Default select example"
+              >
+                <option value="" disabled selected>
+                  Sélectionner une option
+                </option>
+              </select>
+            </div>
+            
+              <button id="addCart" type="button" class="btn btn-outline-light">Ajouter au panier</button>
+            
           </figcaption>
         </figure>
       </div>
@@ -49,6 +63,6 @@
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/product.js"></script>
+    <script type="module" src="./js/product.js"></script>
   </body>
 </html>

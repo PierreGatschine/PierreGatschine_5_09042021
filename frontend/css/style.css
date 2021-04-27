@@ -6,7 +6,7 @@
 
 body {
     background-color: #262626;
-    color: #FAFAFA;
+    color: #8b8f92;
     font-family: 'Hind Guntur',
     sans-serif;
 }
@@ -49,10 +49,26 @@ figcaption {
     color: #8b8f92;
 }
 
+thead, tbody {
+    color: #8b8f92;
+}
+
+thead:hover,
+tbody:hover {
+    color: #FF5E3A;
+}
 
 #productPrice {
     
     align-self: flex-end;
     font-size: 1.5rem;
     text-decoration: none;
+}
+
+#lenses {
+    color: #8b8f92;
+}
+
+button {
+   margin-top: 2.5rem;
 }

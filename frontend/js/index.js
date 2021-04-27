@@ -1,5 +1,5 @@
 /** @format */
-import {numberWithCommas} from './basesFunctions.js';
+import { getProducts,numberWithCommas } from "./basesFunctions.js";
 
 (async () => {
   const products = await getProducts();
@@ -7,13 +7,13 @@ import {numberWithCommas} from './basesFunctions.js';
   hydratePage(products);
 })();
 
-async function getProducts() {
+/* async function getProducts() {
   let url = "http://localhost:3000/api/cameras";
   return fetch(url)
     .then(response => response.json())
     .then(products => products)
     .catch(err => console.log(err));
-}
+} */
 
 function hydratePage(products) {
   /*document.querySelector("#productsList").innerHTML = "";
@@ -33,7 +33,7 @@ function hydratePage(products) {
 function displayProduct(product) {
   const templateElt = document.querySelector("#product");
 
-  
+
   const cloneElt = document.importNode(templateElt.content, true);
   cloneElt.querySelector("#productImage").src = product.imageUrl;
   cloneElt.querySelector("#productName").textContent = product.name;
@@ -42,9 +42,7 @@ function displayProduct(product) {
   }.00 €`;
   cloneElt.querySelector("#productDescription").textContent =
     product.description;
-  cloneElt.querySelector(
-    "#productLink"
-  ).href = `./product.html?id=${product._id}`;
+  cloneElt.querySelector("#productLink").href = `./product.html?id=${product._id}`;
 
   const display = document.querySelector("#productsList").appendChild(cloneElt);
 }
