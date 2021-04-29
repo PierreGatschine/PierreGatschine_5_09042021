@@ -1,4 +1,5 @@
 /** @format */
+import Carts from "./models/Carts.js";
 import { numberWithCommas } from "./basesFunctions.js"; 
 
 (async () => {
@@ -7,7 +8,7 @@ import { numberWithCommas } from "./basesFunctions.js";
   const productData = await getProductData(productId);
   console.log(productData);
   hydratePage(productData);
-})();
+
 
 function getProductId() {
   return new URL(window.location.href).searchParams.get("id");
@@ -43,7 +44,39 @@ function hydratePage(productData) {
     selectElt.textContent = lense;
     lensesElt.appendChild(selectElt);
   }
-   /* const cloneElt = document.cloneNode(true);  */
+  
+   basket.addEventListener("click", function(e) {
+     e.preventDefault();
+     // Clique sur bouton ajouter au panier
+     let product = productId;
+    console.log(product);
+     let lense = document.querySelector("select").value;
+     console.log('lense:', lense)
+     let quantity = document.getElementById("quantityInput").value;
+     console.log('quantity:', quantity)
+
+     if (quantity < 1) {
+       alert("Veuillez sélectionner un produit", "", "error");
+     } else {
+       alert("Produit ajouté au panier", "", "success");
+
+       //const cartRepository = new CartRepository();
+        const cart = new Carts(); // fonction ajouter au panier (addToCart) de CartRepository
+        //console.log('cart:', cart)
+        cart.addToCart(product, lense, quantity);
+        //console.log(cart.addToCart(product, lense, quantity));
+     }
+   });
+}
+})();
+
+/* function redirectToShoppingCart(productName) {
+  window.location.href = `${window.location.origin}/cart.html?lastAddedProductName=${productName}`;
+} */
+
+
+
+ /* const cloneElt = document.cloneNode(true);  */
 
   /*  lensesElt.appendChild(selectElt); */
 
@@ -76,10 +109,9 @@ function hydratePage(productData) {
  lensesElt.appendChild(selectElt); */
 
   // Add event listeners on button
-  let addCart = document.getElementById("addCart").onclick = (e) => {
+  /* let addCart = document.getElementById("addCart").onclick = (e) => {
     e.preventDefault();
     Cart.addProduct(product);
     redirectToShoppingCart(product.name);
   };
-
-}
+ */

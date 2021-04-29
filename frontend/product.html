@@ -51,8 +51,22 @@
               </select>
             </div>
             
-              <button id="addCart" type="button" class="btn btn-outline-light">Ajouter au panier</button>
-            
+             <div class="quantityDiv col-sm-3">
+                <h4 for="quantityInput">Combien d'appareil photo souhaitez-vous ajouter à votre panier ?</h4>
+                <input 
+                    step="number" 
+                    placeholder="Quantité" 
+                    class="form-control col-sm-3" 
+                    id="quantityInput" 
+                    name="quantityInput" 
+                    type="number" 
+                    min="0" max="99" 
+                    value='1'>
+                </input>
+            </div>
+
+              <button id="basket" onclick="" type="button" class="btn btn-outline-light">Ajouter au panier</button>
+
           </figcaption>
         </figure>
       </div>
