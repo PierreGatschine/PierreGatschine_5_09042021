@@ -2,10 +2,10 @@
 
 export class Contact {
   constructor(firstName, lastName, address, city, email) {
-    (this.firstName = firstName),
-      (this.lastName = lastName),
-      (this.address = address),
-      (this.city = city),
-      (this.email = email);
+    this._firstName = firstName,
+    this._lastName = lastName,
+    this._address = address,
+    this._city = city,
+    this._email = email;
   }
 }

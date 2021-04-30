@@ -1,3 +1,4 @@
+/** @format */
 
 export class CartItems {
   constructor(product, lense, quantity) {

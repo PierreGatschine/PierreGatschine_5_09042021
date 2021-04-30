@@ -1,12 +1,9 @@
 /** @format */
 import { CartItems } from "../cartItems.js";
-export default class Carts {
-  /* constructor(product, lense, quantity) {
-    this._product = product;
-    this._lense = lense;
-    this._quantity = quantity;
-  } */
 
+
+export default class Carts {
+  
   getproducts() {
     let cart = JSON.parse(localStorage.getItem("productCart")) || [];
     return cart;
@@ -98,7 +95,7 @@ export default class Carts {
     }
   }
 
-  emptyCart() {
+  /* emptyCart() {
     // Fonction permettant de vider le panier (On vide le localStorage)
 
     swal.setActionValue({ confirm: false, cancel: true });
@@ -118,6 +115,6 @@ export default class Carts {
         }
       }
     });
-  }
+  } */
 }
 

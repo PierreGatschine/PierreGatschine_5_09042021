@@ -26,3 +26,4 @@ async function getProductData(productId) {
 }
 
 export { getProducts, getProductData, numberWithCommas };
+
