@@ -25,54 +25,180 @@
     <h1>Orinoco</h1>
 
     <div class="container">
-      <div class="row">
-        <section class="panier">
-          <h2>Votre Panier</h2>
+      <section class="panier">
+        <h2>Votre Panier</h2>
+        <!-- <div class="row">
+          <div class="col-sm-1">
+            <img
+              id="productImg"
+              src=""
+              class="figure-img img-fluid rounded"
+              alt="..."
+            />
+          </div> 
+        </div> -->
+        <div class="row">
           <table class="table table-borderless">
             <thead>
               <tr>
-                <th scope="col">Produit</th>
-                <th scope="col">Quantité</th>
-                <th scope="col">Prix unitaire</th>
+                <th scope="col"></th>
+                <th scope="col">Pdt</th>
+                <th scope="col">Option</th>
+                <th scope="col">Qté</th>
+                <th scope="col">PU</th>
                 <th scope="col">Total</th>
               </tr>
             </thead>
             <tbody id="productsList">
               <template id="productTemplate">
                 <tr>
+                  <td id="productImage">
+                    <img
+                      id="productImg"
+                      src=""
+                      class="figure-img img-fluid rounded"
+                      alt="..."
+                    />
+                  </td>
                   <td id="productName"></td>
+                  <td id="productLense"></td>
                   <td>
                     <select
                       id="productQuantity"
-                      class="form-select col-sm-1"
+                      class="form-select"
                       aria-label="Default select example"
-                      name="quantity"
-                      id="quantity"
                     >
-                      <!-- <option selected>Open this select menu</option> -->
-                      <option></option>
-                    <!--   <option value="1">1</option>
+                      <option selected>Open this select menu</option>
+                      <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
                       <option value="4">4</option>
-                      <option value="5">5</option> -->
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
                     </select>
                   </td>
-                  <td id="productPrice"></td>
+                  <td id="priceItem"></td>
                   <td id="productTotalPrice"></td>
                 </tr>
               </template>
-
               <tr>
                 <th colspan="3">Total achats</th>
                 <td id="totalPrice"></td>
               </tr>
             </tbody>
           </table>
-        </section>
-      </div>
+        </div>
+        <div class="row">
+          <div>
+            <button
+              id="confirmOrder"
+              type="submit"
+              class="btn btn-outline-light col-12"
+            >
+              Confirmer votre panier
+            </button>
+          </div>
+          <div>
+            <button
+              id="deleteOrder"
+              onclick=""
+              type="submit"
+              class="btn btn-outline-light col-12"
+            >
+              Annuler votre panier
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="forms" class="formulaire">
+        <h2>Ordre de facturation</h2>
+        <div class="row">
+          <form id="postData" class="row g-3">
+            <div class="col">
+              <input
+                type="text"
+                id="firstName"
+                class="form-control"
+                placeholder="Prénom"
+                aria-label="First name"
+                maxlength="20"
+                required
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="lastName"
+                class="form-control"
+                placeholder="Nom"
+                aria-label="Last name"
+                maxlength="30"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <!-- <label for="inputEmail4" class="form-label">Email</label> -->
+              <input 
+              type="email" 
+              id="email"
+              class="form-control" 
+              placeholder="Email: exemple@test.com" required/>
+            </div>
+            <div class="col-12">
+              <!-- <label for="inputAddress" class="form-label">Address</label> -->
+              <input
+                type="text"
+                id="address"
+                class="form-control"
+                placeholder="Adresse"
+                maxlength="60"
+                required
+              />
+            </div>
+             <div class="col">
+              <!-- <label for="inputZip" class="form-label">Zip</label> -->
+              <input
+                type="text"
+                id="zip"
+                class="form-control"
+                placeholder="CP"
+                maxlength="5"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <!-- <label for="inputCity" class="form-label">City</label> -->
+              <input
+                type="text"
+                id="city"
+                class="form-control"
+                placeholder="Ville"
+                maxlength="40"
+                required
+              />
+            </div>
+           
+            <div class="col-12">
+              <button
+                id="validateOrder"
+                onclick=""
+                type="submit"
+                class="btn btn-outline-light col-12"
+              >
+                Valider votre achat
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
     </div>
 
     <script type="module" src="./js/cart.js"></script>
   </body>
 </html>
+

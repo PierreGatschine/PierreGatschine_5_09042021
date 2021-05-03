@@ -1,6 +1,6 @@
 /** @format */
 
-// appel asynchrone de l'API
+// asynchronous API call
 async function getProducts() {
   let url = "http://localhost:3000/api/cameras";
   return fetch(url)
@@ -20,7 +20,8 @@ async function getProductData(productId) {
     });
 }
 
-// Affiche les prix avec les milliers détachés (1 000,00€)
+
+// Displays the prices with the detached thousands (€ 1,000.00)
  const numberWithCommas = x => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }

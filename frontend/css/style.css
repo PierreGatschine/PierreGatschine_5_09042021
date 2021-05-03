@@ -11,6 +11,10 @@ body {
     sans-serif;
 }
 
+section {
+    margin-bottom: 3rem;
+}
+
 h1 {
     padding: 2rem;
     color: #FF5E3A;
@@ -71,4 +75,8 @@ tbody:hover {
 
 button {
    margin-top: 2.5rem;
+}
+
+#forms {
+    display: none;
 }

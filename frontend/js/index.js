@@ -1,6 +1,6 @@
 /** @format */
-import { getProducts,numberWithCommas } from "./basesFunctions.js";
-
+import { getProducts } from "./models/Product.js";
+import { numberWithCommas } from "./basesFunctions.js";
 (async () => {
   const products = await getProducts();
   console.log(products);
