@@ -4,6 +4,7 @@ import Carts from "./models/Carts.js";
 import Order  from "./models/Order.js"
 import Contact from "./models/Contact.js"
 import { numberWithCommas } from "./basesFunctions.js";
+import { nameValid, emailValid, zipValid } from "./regexForms.js";
 
 (() => {
   const cart = new Carts();
@@ -67,19 +68,47 @@ import { numberWithCommas } from "./basesFunctions.js";
     const order = new Order();
     console.log("order:", order);
     //let totalCost = totalCartCost.innerHTML;
+    
     let firstName = document.getElementById("firstName").value;
+    console.log('firstName:', firstName)
     let lastName = document.getElementById("lastName").value;
     let email = document.getElementById("email").value;
     let address = document.getElementById("address").value;
     let zip = document.getElementById("zip").value;
     let city = document.getElementById("city").value;
 
-    let contact = new Contact(firstName, lastName, email, address, zip, city);
-    console.log("contact:", contact);
-    order.saveOrder(contact);
-    setTimeout(function () {
-      window.location = "order.html";
-    }, 2000); 
+     if (
+       !(
+         nameValid(firstName) === true &&
+         nameValid(lastName) === true &&
+         emailValid(email) === true &&
+         nameValid(address) === true &&
+         zipValid(zip) === true &&
+         nameValid(city) === true
+
+       )
+     ) {
+       alert(
+         "Veuillez remplir les champs correctements afin de finaliser votre commande"
+       );
+     } else {
+       let contact = new Contact(
+         firstName,
+         lastName,
+         email,
+         address,
+         zip,
+         city
+       );
+       console.log("contact:", contact);
+       order.saveOrder(contact);
+
+       setTimeout(function () {
+         window.location = "order.html";
+       }, 2000);
+     }
+
+    
     
   }); 
 })();

@@ -29,13 +29,14 @@ export default class Order {
     fetch(request)
       .then((response) => response.json()) 
       .then((response) => {
+        console.log('response:', response)
         let getOrderId = response.orderId;
         console.log('getOrderId:', getOrderId)
         
         //localStorage.clear();
         let orderRecap = { getOrderId, contact };
         console.log('orderRecap:', orderRecap)
-        localStorage.setItem("cartConfimed", JSON.stringify(getOrderId));
+        //localStorage.setItem("cartConfimed", JSON.stringify(getOrderId));
         localStorage.setItem("orderIsConfirmed", JSON.stringify(orderRecap));
       });
   }

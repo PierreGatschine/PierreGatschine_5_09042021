@@ -4,7 +4,6 @@ import Order from "./models/Order.js"
 (() => {
   const order = new Order();
   const orderId = order.getOrderId();
-  console.log('orderId:', orderId)
 
   let textZone = document.getElementById("confirmationInfo");
 
