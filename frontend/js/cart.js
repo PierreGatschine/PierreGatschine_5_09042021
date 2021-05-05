@@ -1,7 +1,7 @@
 /** @format */
 
 import Carts from "./models/Carts.js";
-import Order  from "./models/Order.js"
+import  Order  from "./models/Order.js"
 import Contact from "./models/Contact.js"
 import { numberWithCommas } from "./basesFunctions.js";
 import { nameValid, emailValid, zipValid } from "./regexForms.js";
@@ -13,9 +13,8 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
   console.log("productCart:", productCart);
   hydratePage(productCart);
 
-  function hydratePage(productCart) {
-    
 
+  function hydratePage(productCart) {
     // Loop over all products and displays them
     const productList = Object.values(productCart);
     console.log("productList:", productList);
@@ -24,16 +23,15 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
     });
   }
 
+
   function displayProduct(product) {
     const templateElt = document.getElementById("productTemplate");
     const cloneElt = document.importNode(templateElt.content, true);
-
     // Hydrate template
     cloneElt.getElementById("productImg").src = product._product.imageUrl;
     cloneElt.getElementById("productName").textContent = product._product.name;
     cloneElt.getElementById("productLense").textContent = product._lense;
-    cloneElt.getElementById("productQuantity").selectedIndex =
-      product._quantity;
+    cloneElt.getElementById("productQuantity").textContent = product._quantity;
     cloneElt.getElementById("priceItem").textContent = `${numberWithCommas(
       product._product.price / 100
     )}.00 €`;
@@ -41,26 +39,37 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
       "productTotalPrice"
     ).textContent = `${numberWithCommas(
       (product._product.price * product._quantity) / 100
-    )}.00€`;
-
+    )}.00€`; 
+    /* cloneElt.getElementById("totalPrice").textContent = `${numberWithCommas(
+      (product._product.price * product._quantity) / 100
+    )}.00€`; */
     // Add events
-    cloneElt.getElementById("productQuantity").onchange = (e) => {
+    /* cloneElt.getElementById("productQuantity").onchange = (e) => {
       e.preventDefault();
 
       cart.addItem(product._product_id, e.target.selectedIndex + 1);
-    };
+    }; */
 
     // Display template
     document.getElementById("productsList").prepend(cloneElt);
   }
 
-
-
-  /***** Form ******/
-  confirmOrder.addEventListener("click", function (e) {
-    // Confirm the cart and display the form hidden so far
-    document.getElementById("forms").style.display = "block";
-  });
+ deleteOrder.addEventListener("click", function(e) {
+   e.preventDefault();
+   const cart = new Carts();
+   cart.emptyCart();
+   setTimeout(function () {
+     window.location = "index.html";
+   }, 2000);
+ })
+ 
+ 
+ 
+ /***** Form ******/
+ confirmOrder.addEventListener("click", function (e) {
+     // Confirm the cart and display the form hidden so far
+     document.getElementById("forms").style.display = "block";
+   });
 
   validateOrder.addEventListener("click", function (e) {
     e.preventDefault();
@@ -89,7 +98,7 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
        )
      ) {
        alert(
-         "Veuillez remplir les champs correctements afin de finaliser votre commande"
+         "Veuillez remplir tous les champs afin de finaliser votre commande"
        );
      } else {
        let contact = new Contact(
@@ -98,7 +107,7 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
          email,
          address,
          zip,
-         city
+         city         
        );
        console.log("contact:", contact);
        order.saveOrder(contact);
@@ -106,9 +115,6 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
        setTimeout(function () {
          window.location = "order.html";
        }, 2000);
-     }
-
-    
-    
+     } 
   }); 
 })();

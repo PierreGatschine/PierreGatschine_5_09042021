@@ -7,35 +7,28 @@ import { numberWithCommas } from "./basesFunctions.js";
   hydratePage(products);
 
   function hydratePage(products) {
-    /*document.querySelector("#productsList").innerHTML = "";
-
-  products.map(product => {
-    displayProduct(product);
-  }); */
-
-    const result = document.querySelector("#productsList");
+    const result = document.getElementById("productsList");
     result.innerHTML = "";
-
     products.map((product) => displayProduct(product)).join("");
   }
 
   function displayProduct(product) {
-    const templateElt = document.querySelector("#product");
-
+    const templateElt = document.getElementById("product");
     const cloneElt = document.importNode(templateElt.content, true);
-    cloneElt.querySelector("#productImage").src = product.imageUrl;
-    cloneElt.querySelector("#productName").textContent = product.name;
-    cloneElt.querySelector("#productPrice").textContent = `${numberWithCommas(
+
+    cloneElt.getElementById("productImage").src = product.imageUrl;
+    cloneElt.getElementById("productName").textContent = product.name;
+    cloneElt.getElementById("productPrice").textContent = `${numberWithCommas(
       product.price / 100
     )}.00 €`;
-    cloneElt.querySelector("#productDescription").textContent =
+    cloneElt.getElementById("productDescription").textContent =
       product.description;
-    cloneElt.querySelector(
-      "#productLink"
+    cloneElt.getElementById(
+      "productLink"
     ).href = `./product.html?id=${product._id}`;
 
     const display = document
-      .querySelector("#productsList")
+      .getElementById("productsList")
       .appendChild(cloneElt);
   }
 })();

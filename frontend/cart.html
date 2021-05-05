@@ -22,7 +22,24 @@
   </head>
 
   <body>
-    <h1>Orinoco</h1>
+    <header>
+      <nav id="navBar" class="navbar fixed-top">
+        <div class="container">
+          <a class="nav-logo" aria-current="page"
+                href="./index.html">Orinoco</a>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="./cart.html"
+                >Panier</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
     <div class="container">
       <section class="panier">
@@ -38,32 +55,33 @@
           </div> 
         </div> -->
         <div class="row">
-          <table class="table table-borderless">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">Pdt</th>
-                <th scope="col">Option</th>
-                <th scope="col">Qté</th>
-                <th scope="col">PU</th>
-                <th scope="col">Total</th>
-              </tr>
-            </thead>
-            <tbody id="productsList">
-              <template id="productTemplate">
+          <table class="table table-borderless  align-top">
+            
+              <thead>
                 <tr>
-                  <td id="productImage">
-                    <img
-                      id="productImg"
-                      src=""
-                      class="figure-img img-fluid rounded"
-                      alt="..."
-                    />
-                  </td>
-                  <td id="productName"></td>
-                  <td id="productLense"></td>
-                  <td>
-                    <select
+                  <th class="col-xs-1 col-md-2 col-lg-2"></th>
+                  <th scope="col-xs-2 col-md-2 col-lg-2">Pdt</th>
+                  <th scope="col-xs-2 col-md-2 col-lg-2">Option</th>
+                  <th scope="col-xs-2 col-md-2 col-lg-2">Qté</th>
+                  <th scope="col-xs-2 col-md-2 col-lg-2">PU</th>
+                  <th scope="col-xs-2 col-md-2 col-lg-2">Total</th>
+                </tr>
+              </thead>
+              <tbody id="productsList">
+                <template id="productTemplate">
+                  <tr>
+                    <td id="productImage">
+                      <img
+                        id="productImg"
+                        src=""
+                        class="figure-img img-fluid rounded"
+                        alt="..."
+                      />
+                    </td>
+                    <td id="productName"></td>
+                    <td id="productLense"></td>
+                    <td id="productQuantity">
+                      <!-- <select
                       id="productQuantity"
                       class="form-select"
                       aria-label="Default select example"
@@ -79,17 +97,18 @@
                       <option value="8">8</option>
                       <option value="9">9</option>
                       <option value="10">10</option>
-                    </select>
-                  </td>
-                  <td id="priceItem"></td>
-                  <td id="productTotalPrice"></td>
+                    </select> -->
+                    </td>
+                    <td id="priceItem"></td>
+                    <td id="productTotalPrice"></td>
+                  </tr>
+                </template>
+                <tr>
+                  <th colspan="3">Total achats</th>
+                  <td id="totalPrice"></td>
                 </tr>
-              </template>
-              <tr>
-                <th colspan="3">Total achats</th>
-                <td id="totalPrice"></td>
-              </tr>
-            </tbody>
+              </tbody>
+            
           </table>
         </div>
         <div class="row">
@@ -143,11 +162,13 @@
             </div>
             <div class="col-md-6">
               <!-- <label for="inputEmail4" class="form-label">Email</label> -->
-              <input 
-              type="email" 
-              id="email"
-              class="form-control" 
-              placeholder="Email: exemple@test.com" required/>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="Email: exemple@test.com"
+                required
+              />
             </div>
             <div class="col-12">
               <!-- <label for="inputAddress" class="form-label">Address</label> -->
@@ -160,7 +181,7 @@
                 required
               />
             </div>
-             <div class="col">
+            <div class="col">
               <!-- <label for="inputZip" class="form-label">Zip</label> -->
               <input
                 type="text"
@@ -182,7 +203,7 @@
                 required
               />
             </div>
-           
+
             <div class="col-12">
               <button
                 id="validateOrder"
@@ -201,4 +222,3 @@
     <script type="module" src="./js/cart.js"></script>
   </body>
 </html>
-

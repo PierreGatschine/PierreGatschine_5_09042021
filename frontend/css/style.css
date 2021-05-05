@@ -5,6 +5,7 @@
 }
 
 body {
+    
     background-color: #262626;
     color: #8b8f92;
     font-family: 'Hind Guntur',
@@ -33,12 +34,94 @@ p {
 }
 
 ul {
+    
     list-style: none;
 }
 
-li {
+.table {
+    margin-top: 2.5em;
+}
+
+td {
+    padding: 0.75em;
+}
+
+.container-header {
+    max-width: 940px;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.list-none {
     padding-bottom: 3rem;
 }
+
+.navbar {
+    height: 80px;
+     background-color: #262626;
+      color: #FF5E3A;
+}
+
+
+
+.nav-logo {
+    padding: 0.3125rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: #262626;
+    color: #FF5E3A;
+}
+
+.nav-logo:hover {
+    color: #8b8f92;
+}
+
+.nav-link {
+    padding: 0.3125rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: #262626;
+    color: #FF5E3A;
+}
+
+.nav-link:hover {
+    color: #8b8f92;
+}
+
+
+.btn {
+    border: solid 1px #8b8f92;
+    background-color: #262626;
+    color: #8b8f92;
+}
+
+#productList {
+    padding: 0.75em;
+}
+
+#productLens {
+    margin-bottom: 2rem;
+    border: solid 1px #8b8f92;
+    background-color: #262626;
+    color: #8b8f92;
+}
+
+#quantityInput {
+    margin-bottom: 2rem;
+    border: solid 1px #8b8f92;
+    background-color: #262626;
+    color: #8b8f92;
+}
+
+
+
 figcaption {
     padding: .5rem;
     display: flex;
