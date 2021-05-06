@@ -47,6 +47,13 @@ export default class Carts {
     this.setproducts(cart);
   }
 
+  getTotalPrice() {
+    let cart = this.getproducts();
+    const totalPrice = Object.values(cart).reduce((acc, curr) => {
+      return acc + (curr._product.price * curr._quantity) / 100;
+    }, 0);
+    return totalPrice;
+  }
 
   emptyCart() {
     if (confirm ('Cette action va vider le contenu de votre Panier, si vous souhaitez annuler votre commande, veuillez cliquez sur OK')) {

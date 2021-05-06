@@ -13,7 +13,7 @@ export default class Product {
 
 }
 
-// appel asynchrone de l'API
+// Method for calling all products
 export async function getProducts() {
   let url = "http://localhost:3000/api/cameras";
   return fetch(url)
@@ -22,7 +22,7 @@ export async function getProducts() {
     .catch((err) => console.log(err));
 }
 
-
+// Method to call up a product using its identifier
 export async function getProductData(productId) {
   let url = `http://localhost:3000/api/cameras/${productId}`;
   return fetch(url)

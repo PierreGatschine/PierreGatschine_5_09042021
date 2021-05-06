@@ -13,7 +13,7 @@ import Order from "./models/Order.js"
     `<div class="orderInfos">
     <p> Merci !</p> 
     <p><strong>${orderId.contact._firstName}</strong> <strong>${orderId.contact._lastName}</strong> ,</p> 
-    <p></p>votre commande <strong>${orderId.getOrderId}</strong> a bien été prise en compte.</p>
+    <p></p>votre commande <strong>${orderId.getOrderId}</strong> a bien été prise en compte, pour un montant de <strong>${orderId.totalOrderAmount}uros</strong>.</p>
     </div>
     `;
 })();

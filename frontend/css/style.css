@@ -4,12 +4,27 @@
     padding: 0;
 }
 
+:root {
+    --black: #262626;
+    --gray: #8b8f92;
+    --red: #FF5E3A;
+}
+
+
 body {
     
-    background-color: #262626;
-    color: #8b8f92;
+    background-color: var(--black);
+    color: var(--gray);
     font-family: 'Hind Guntur',
     sans-serif;
+}
+
+.container-header {
+    max-width: 940px;
+}
+
+.container {
+    max-width: 960px;
 }
 
 section {
@@ -18,7 +33,7 @@ section {
 
 h1 {
     padding: 2rem;
-    color: #FF5E3A;
+    color: var(--red);
 }
 
 a {
@@ -29,6 +44,12 @@ img {
     width: 100%;
     object-fit: cover;
 }
+
+img:hover {
+    
+    opacity: .80;
+}
+
 p {
     font-size: 1rem;
 }
@@ -42,64 +63,45 @@ ul {
     margin-top: 2.5em;
 }
 
+thead,
+tbody {
+    color: var(--gray);
+}
+
+thead:hover,
+tbody:hover {
+    color: var(--red);
+}
+
 td {
     padding: 0.75em;
 }
 
-.container-header {
-    max-width: 940px;
+button {
+    margin-top: 2.5rem;
 }
-
-.container {
-    max-width: 960px;
-}
-
-.list-none {
-    padding-bottom: 3rem;
-}
-
-.navbar {
-    height: 80px;
-     background-color: #262626;
-      color: #FF5E3A;
-}
-
-
-
-.nav-logo {
-    padding: 0.3125rem 0;
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    text-decoration: none;
-    white-space: nowrap;
-    background-color: #262626;
-    color: #FF5E3A;
-}
-
-.nav-logo:hover {
-    color: #8b8f92;
-}
-
-.nav-link {
-    padding: 0.3125rem;
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-decoration: none;
-    white-space: nowrap;
-    background-color: #262626;
-    color: #FF5E3A;
-}
-
-.nav-link:hover {
-    color: #8b8f92;
-}
-
 
 .btn {
-    border: solid 1px #8b8f92;
-    background-color: #262626;
-    color: #8b8f92;
+    border: solid 1px var(--gray);
+    background-color: var(--black);
+    color: var(--gray);
+}
+
+.btn:hover {
+    border: solid 1px var(--black);
+    background-color: var(--gray);
+    color: var(--black);
+}
+
+figcaption {
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.figure-caption {
+    color: var(--gray);
 }
 
 #productList {
@@ -108,58 +110,70 @@ td {
 
 #productLens {
     margin-bottom: 2rem;
-    border: solid 1px #8b8f92;
-    background-color: #262626;
-    color: #8b8f92;
+    border: solid 1px var(--gray);
+    background-color: var(--black);
+    color: var(--gray);
 }
 
 #quantityInput {
     margin-bottom: 2rem;
-    border: solid 1px #8b8f92;
-    background-color: #262626;
-    color: #8b8f92;
-}
-
-
-
-figcaption {
-    padding: .5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    
-
-    
-}
-
-.figure-caption {
-    color: #8b8f92;
-}
-
-thead, tbody {
-    color: #8b8f92;
-}
-
-thead:hover,
-tbody:hover {
-    color: #FF5E3A;
+    border: solid 1px var(--gray);
+    background-color: var(--black);
+    color: var(--gray);
 }
 
 #productPrice {
-    
     align-self: flex-end;
     font-size: 1.5rem;
     text-decoration: none;
 }
 
 #lenses {
-    color: #8b8f92;
-}
-
-button {
-   margin-top: 2.5rem;
+    color: var(--gray);
 }
 
 #forms {
     display: none;
 }
+
+
+
+.list-none {
+    padding-bottom: 3rem;
+}
+
+.navbar {
+    height: 80px;
+     background-color: var(--black);
+      color: var(--red);
+}
+
+.nav-logo {
+    padding: 0.3125rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: var(--black);
+    color: var(--red);
+}
+
+.nav-logo:hover {
+    color: var(--gray);
+}
+
+.nav-link {
+    padding: 0.3125rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: var(--black);
+    color: var(--red);
+}
+
+.nav-link:hover {
+    color: var(--gray);
+}
+

@@ -21,7 +21,7 @@ async function getProductData(productId) {
 }
 
 
-// Displays the prices with the detached thousands (€ 1,000.00)
+// Displays the prices with the detached thousands (€ 1 000.00)
  const numberWithCommas = x => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }

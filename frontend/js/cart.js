@@ -23,8 +23,22 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
     });
   }
 
+  /* function calcul(arr) {
+    const ProductsTotalPrice = [...arr,];
+    let montant = 0;
+    ProductsTotalPrice.forEach((product) => {
+      // Calcul du prix total pour chaque article
+      let productTotalPrice = parseInt(product.innerHTML, 10);
+      montant += productTotalPrice;
+    })
+    return montant;
+  } */
+  
+  
+  
 
   function displayProduct(product) {
+
     const templateElt = document.getElementById("productTemplate");
     const cloneElt = document.importNode(templateElt.content, true);
     // Hydrate template
@@ -39,16 +53,13 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
       "productTotalPrice"
     ).textContent = `${numberWithCommas(
       (product._product.price * product._quantity) / 100
-    )}.00€`; 
-    /* cloneElt.getElementById("totalPrice").textContent = `${numberWithCommas(
-      (product._product.price * product._quantity) / 100
-    )}.00€`; */
-    // Add events
-    /* cloneElt.getElementById("productQuantity").onchange = (e) => {
-      e.preventDefault();
+    )}.00€`;
 
-      cart.addItem(product._product_id, e.target.selectedIndex + 1);
-    }; */
+    
+    // Display total amount of the order
+   let totalOrderAmount = (document.getElementById(
+     "totalPriceOrder"
+   ).textContent = `${numberWithCommas(cart.getTotalPrice())}.00€`);
 
     // Display template
     document.getElementById("productsList").prepend(cloneElt);
@@ -77,7 +88,9 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
     const order = new Order();
     console.log("order:", order);
     //let totalCost = totalCartCost.innerHTML;
-    
+    let totalOrderAmount = (document.getElementById(
+      "totalPriceOrder"
+    ).textContent = `${numberWithCommas(cart.getTotalPrice())}.00€`);
     let firstName = document.getElementById("firstName").value;
     console.log('firstName:', firstName)
     let lastName = document.getElementById("lastName").value;
@@ -110,7 +123,7 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
          city         
        );
        console.log("contact:", contact);
-       order.saveOrder(contact);
+       order.saveOrder(contact, totalOrderAmount);
 
        setTimeout(function () {
          window.location = "order.html";
