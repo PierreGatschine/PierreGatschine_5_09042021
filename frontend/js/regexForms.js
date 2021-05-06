@@ -11,16 +11,7 @@ export function emailValid(value) {
   return regex.test(value);
 }
 
-/* export function specialCharactersValid(value) {
-  let regex = /^[^@&"()!_$*€£`+=\/;?#]+$/;
-  return regex.test(value);
-}
 
-export function onlyWhitespacesInvalid(value) {
-  let regex = /^\s+$/;
-  return regex.test(value);
-}
- */
 export function zipValid(value) {
   let regex = /[0-9]{5}(-[0-9]{4})?/;
   return regex.test(value);
