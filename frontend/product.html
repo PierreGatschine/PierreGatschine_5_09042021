@@ -22,7 +22,7 @@
   </head>
   <body>
     <header>
-      <nav id="navBar" class="navbar fixed-top">
+      <nav id="navBar" class="navbar">
         <div class="container">
           <a class="nav-logo" aria-current="page"
                 href="./index.html">Orinoco</a>
@@ -42,13 +42,17 @@
     <div class="container">
       <div class="row">
         <figure>
-          <img
-            id="productImage"
-            src=""
-            class="figure-img img-fluid rounded"
-            alt="..."
-          />
-          <figcaption class="figure-caption">
+          <div class="row">
+            <div class="col-md-5">
+              <img
+                id="productImage"
+                src=""
+                class="figure-img img-fluid rounded"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-7">
+              <figcaption class="figure-caption">
             <div>
               <h3 id="productName"></h3>
               <span id="productPrice"></span>
@@ -59,31 +63,32 @@
               <h4>Choisir une lentille</h4>
               <select
                 id="productLens"
-                class="form-select col-sm-3 col-md-3 col-lg-3"
+                class="form-select"
                 aria-label="Default select example"
               >
-                <option value="" disabled selected>
+                <option value="1" disabled selected>
                   Sélectionner une option
                 </option>
               </select>
             </div>
             <h4 for="quantityInput">Combien d'appareil photo souhaitez-vous ajouter à votre panier ?</h4>
-            <div class="quantityDiv col-sm-3">
+            <div class="quantityDiv">
                 <input 
                     step="number" 
                     placeholder="Quantité" 
-                    class="form-control col-sm-3" 
+                    class="form-control" 
                     id="quantityInput" 
                     name="quantityInput" 
                     type="number" 
-                    min="0" max="99" 
+                    min="0" max="10" 
                     value='1'>
                 </input>
             </div>
-
               <button id="preOrder" onclick="" type="button" class="btn ">Ajouter au panier</button>
-
           </figcaption>
+            </div> 
+          </div>
+ 
         </figure>
       </div>
     </div>

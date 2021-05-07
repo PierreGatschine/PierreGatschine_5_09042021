@@ -23,20 +23,6 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
     });
   }
 
-  /* function calcul(arr) {
-    const ProductsTotalPrice = [...arr,];
-    let montant = 0;
-    ProductsTotalPrice.forEach((product) => {
-      // Calcul du prix total pour chaque article
-      let productTotalPrice = parseInt(product.innerHTML, 10);
-      montant += productTotalPrice;
-    })
-    return montant;
-  } */
-  
-  
-  
-
   function displayProduct(product) {
 
     const templateElt = document.getElementById("productTemplate");
@@ -70,7 +56,7 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
    const cart = new Carts();
    cart.emptyCart();
    setTimeout(function () {
-     window.location = "index.html";
+     window.location = "./index.html";
    }, 2000);
  })
  
@@ -126,7 +112,7 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
        order.saveOrder(contact, totalOrderAmount);
 
        setTimeout(function () {
-         window.location = "order.html";
+         window.location = "./order.html";
        }, 2000);
      } 
   }); 

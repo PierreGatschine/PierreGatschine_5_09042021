@@ -23,7 +23,7 @@
 
   <body>
     <header>
-      <nav id="navBar" class="navbar fixed-top">
+      <nav id="navBar" class="navbar ">
         <div class="container">
           <a class="nav-logo" aria-current="page"
                 href="./index.html">Orinoco</a>
@@ -44,27 +44,17 @@
     <div class="container">
       <section class="panier">
         <h2>Votre Panier</h2>
-        <!-- <div class="row">
-          <div class="col-sm-1">
-            <img
-              id="productImg"
-              src=""
-              class="figure-img img-fluid rounded"
-              alt="..."
-            />
-          </div> 
-        </div> -->
+        
         <div class="row">
           <table class="table table-borderless  align-top">
-            
               <thead>
                 <tr>
-                  <th class="col-xs-1 col-md-2 col-lg-2"></th>
-                  <th scope="col-xs-2 col-md-2 col-lg-2">Pdt</th>
-                  <th scope="col-xs-2 col-md-2 col-lg-2">Option</th>
-                  <th scope="col-xs-2 col-md-2 col-lg-2">Qté</th>
-                  <th scope="col-xs-2 col-md-2 col-lg-2">PU</th>
-                  <th scope="col-xs-2 col-md-2 col-lg-2">Total</th>
+                  <th class="col-2"></th>
+                  <th scope="col-2">Pdt</th>
+                  <th scope="col-2">Option</th>
+                  <th scope="col-2">Qté</th>
+                  <th scope="col-2">PU</th>
+                  <th scope="col-2">Total</th>
                 </tr>
               </thead>
               <tbody id="productsList">
@@ -81,31 +71,14 @@
                     <td id="productName"></td>
                     <td id="productLense"></td>
                     <td id="productQuantity">
-                      <!-- <select
-                      id="productQuantity"
-                      class="form-select"
-                      aria-label="Default select example"
-                    >
-                      <option selected>Open this select menu</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                    </select> -->
                     </td>
                     <td id="priceItem"></td>
                     <td id="productTotalPrice"></td>
                   </tr>
                 </template>
                 <tr>
-                  <th colspan="10">Total achats</th>
-                  <td id="totalPriceOrder"></td>
+                  <th colspan="1" id="last-th">Total achats</th>
+                  <td colspan="11" id="totalPriceOrder"></td>
                 </tr>
               </tbody>
             
@@ -138,7 +111,7 @@
         <h2>Ordre de facturation</h2>
         <div class="row">
           <form id="postData" class="row g-3">
-            <div class="col">
+            <div class="col-6">
               <input
                 type="text"
                 id="firstName"
@@ -149,7 +122,7 @@
                 required
               />
             </div>
-            <div class="col">
+            <div class="col-6">
               <input
                 type="text"
                 id="lastName"
@@ -160,8 +133,8 @@
                 required
               />
             </div>
-            <div class="col-md-6">
-              <!-- <label for="inputEmail4" class="form-label">Email</label> -->
+            <div class="col-6">
+              
               <input
                 type="email"
                 id="email"
@@ -171,7 +144,7 @@
               />
             </div>
             <div class="col-12">
-              <!-- <label for="inputAddress" class="form-label">Address</label> -->
+             
               <input
                 type="text"
                 id="address"
@@ -181,8 +154,8 @@
                 required
               />
             </div>
-            <div class="col">
-              <!-- <label for="inputZip" class="form-label">Zip</label> -->
+            <div class="col-2">
+              
               <input
                 type="text"
                 id="zip"
@@ -192,8 +165,8 @@
                 required
               />
             </div>
-            <div class="col-md-6">
-              <!-- <label for="inputCity" class="form-label">City</label> -->
+            <div class="col-6">
+              
               <input
                 type="text"
                 id="city"
@@ -222,3 +195,5 @@
     <script type="module" src="./js/cart.js"></script>
   </body>
 </html>
+
+ 
