@@ -26,7 +26,7 @@ import { numberWithCommas } from "./basesFunctions.js";
       productData.description;
     document.querySelector("#productLens").textContent = productData.lenses;
 
-    // Afficher le selecteur de lentilles
+    // Show lens selector
     let lensesElt = document.getElementById("productLens");
     let lenses = productData.lenses;
 

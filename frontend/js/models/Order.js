@@ -13,7 +13,7 @@ export default class Order {
     console.log("products:", products);
 
     const postUrlAPI = "http://localhost:3000/api/cameras/order";
-    console.log('postUrlAPI:', postUrlAPI)
+    console.log("postUrlAPI:", postUrlAPI);
     const request = new Request(postUrlAPI, {
       method: "POST",
       body: JSON.stringify({ contact, products }),
@@ -24,7 +24,7 @@ export default class Order {
     });
     return request;
   }
- 
+  // Method which retrieves the contact object and the total amount as a parameter and adds the location in localstorage
   saveOrder(contact, totalOrderAmount) {
     const request = this.order(contact);
     console.log("request:", request);

@@ -1,5 +1,4 @@
 /** @format */
-
 export class CartItems {
   constructor(product, lense, quantity) {
     this._product = product;

@@ -9,7 +9,7 @@ import Order from "./models/Order.js"
   let textZone = document.getElementById("confirmationInfo");
 
   textZone.innerHTML +=
-    // Création du HTML avec l'identifiant et le prix total de la commande
+    // Creation of the HTML with the identifier and the total price of the order
     `<div class="orderInfos">
     <p> Merci !</p> 
     <p><strong>${orderId.contact._firstName}</strong> <strong>${orderId.contact._lastName}</strong> ,</p> 

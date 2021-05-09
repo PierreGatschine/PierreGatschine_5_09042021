@@ -1,8 +1,7 @@
 /** @format */
-
+// function which checks if the value of form input doesn't contain numbers
 export function nameValid(value) {
-  // function which checks if the value of form input doesn't contain numbers
-  let regex = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
+  let regex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
   return regex.test(value);
 }
 

@@ -34,12 +34,12 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
     cloneElt.getElementById("productQuantity").textContent = product._quantity;
     cloneElt.getElementById("priceItem").textContent = `${numberWithCommas(
       product._product.price / 100
-    )}.00 €`;
+    )}`;
     cloneElt.getElementById(
       "productTotalPrice"
     ).textContent = `${numberWithCommas(
       (product._product.price * product._quantity) / 100
-    )}.00€`;
+    )}`;
 
     
     // Display total amount of the order
@@ -97,7 +97,7 @@ import { nameValid, emailValid, zipValid } from "./regexForms.js";
        )
      ) {
        alert(
-         "Veuillez remplir tous les champs afin de finaliser votre commande"
+         "Veuillez remplir tous les champs (Nom, Prénom sans un nombre, email valide) afin de finaliser votre commande"
        );
      } else {
        let contact = new Contact(

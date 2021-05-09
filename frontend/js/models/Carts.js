@@ -10,8 +10,7 @@ export default class Carts {
   setproducts(cart) {
     localStorage.setItem("productCart", JSON.stringify(cart));
   }
-
-  
+  // method to add a product and check if there is a match
   addToCart(_product, _lense, _quantity) {
     const cartItem = new CartItems(_product, _lense, _quantity);
     let cart = this.getproducts();
@@ -46,7 +45,7 @@ export default class Carts {
     }
     this.setproducts(cart);
   }
-
+  // Method to calculate the total amount using an accumulator of total prices
   getTotalPrice() {
     let cart = this.getproducts();
     const totalPrice = Object.values(cart).reduce((acc, curr) => {
@@ -56,10 +55,12 @@ export default class Carts {
   }
 
   emptyCart() {
-    if (confirm ('Cette action va vider le contenu de votre Panier, si vous souhaitez annuler votre commande, veuillez cliquez sur OK')) {
-        localStorage.removeItem('productCart');
+    if (
+      confirm(
+        "Cette action va vider le contenu de votre Panier, si vous souhaitez annuler votre commande, veuillez cliquez sur OK"
+      )
+    ) {
+      localStorage.removeItem("productCart");
     }
   }
-
-
 }
