@@ -1,8 +1,10 @@
+/** @format */
 
+const products = [];
 export default class Order {
   order(contact) {
     // Method for sending data to the server with Post
-    const products = [];
+
     let cart = JSON.parse(localStorage.getItem("productCart")) || [];
     console.log("cart:", cart);
 
@@ -12,20 +14,25 @@ export default class Order {
     }
     console.log("products:", products);
 
-    const postUrlAPI = "http://localhost:3000/api/cameras/order";
-    console.log("postUrlAPI:", postUrlAPI);
-    const request = new Request(postUrlAPI, {
+    //const postUrlAPI = "http://localhost:3000/api/cameras/order"
+    /* console.log("postUrlAPI:", postUrlAPI);
+    const request = "http://localhost:3000/api/cameras/order", {
       method: "POST",
       body: JSON.stringify({ contact, products }),
-      headers: { "Content-Type": "application/json" }
-    }); 
-    return request
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }; */
   }
   // Method which retrieves the contact object and the total amount as a parameter and adds the location in localstorage
   saveOrder(contact, totalOrderAmount) {
     const request = this.order(contact);
     console.log("request:", request);
-    fetch(request)
+    fetch("http://localhost:3000/api/cameras/order", {
+      method: "POST",
+      body: JSON.stringify({ contact, products }),
+      headers: { "Content-Type": "application/json" },
+    })
       .then((response) => response.json())
       .then((json) => {
         //console.log("response:", json);
@@ -34,8 +41,8 @@ export default class Order {
 
         let orderRecap = { getOrderId, contact, totalOrderAmount };
         console.log("orderRecap:", orderRecap);
-        localStorage.removeItem("productCart");
-        //localStorage.setItem("cartConfimed", JSON.stringify(getOrderId));
+        //localStorage.removeItem("productCart");
+        localStorage.setItem("cartConfimed", JSON.stringify(getOrderId));
         localStorage.setItem("orderIsConfirmed", JSON.stringify(orderRecap));
       })
       .catch(() => {

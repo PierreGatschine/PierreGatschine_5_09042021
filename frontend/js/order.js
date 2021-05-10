@@ -12,7 +12,7 @@ import Order from "./models/Order.js"
     // Creation of the HTML with the identifier and the total price of the order
     `<div class="orderInfos">
     <p> Merci !</p> 
-    <p><strong>${orderId.contact._firstName}</strong> <strong>${orderId.contact._lastName}</strong> ,</p> 
+    <p><strong>${orderId.contact.firstName}</strong> <strong>${orderId.contact.lastName}</strong> ,</p> 
     <p></p>votre commande <strong>${orderId.getOrderId}</strong> a bien été prise en compte, pour un montant de <strong>${orderId.totalOrderAmount}uros</strong>.</p>
     </div>
     `;
